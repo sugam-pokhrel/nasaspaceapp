@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
+
 function ModalForm({ isOpen, onClose }) {
   const { data: session } = useSession();
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ function ModalForm({ isOpen, onClose }) {
   const handleCategoryChange = (e) => {
     const { name, checked } = e.target;
     const updatedCategories = [...formData.categories];
-
+  
     if (checked) {
       updatedCategories.push(name);
     } else {
@@ -27,8 +28,11 @@ function ModalForm({ isOpen, onClose }) {
         updatedCategories.splice(index, 1);
       }
     }
-
-    setFormData({ ...formData, categories: updatedCategories });
+  
+    setFormData((prev) => ({
+      ...prev,
+      categories: updatedCategories,
+    }));
   };
 
   const handleSubmit = async(e) => {
@@ -40,7 +44,7 @@ function ModalForm({ isOpen, onClose }) {
     }
     
   try{
-    await fetch('/api/user', {
+    await fetch('/api/hello', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
@@ -76,7 +80,29 @@ useEffect(()=>{
 
   data=await data.json()
   console.log(data)
-  }
+  // email,
+  // name:data.name,
+  // phone:data.number,
+  // intrest:data.categories
+setFormData((prev) => ({
+    ...prev,
+    name: data.user.name,
+    number: data.user.phone,
+  
+  }));
+
+  setFormData((prev) => ({
+    ...prev,
+    categories: data.user.intrest,
+  }));  
+
+console.log(data.user.intrest)  
+
+
+
+
+};
+
 
 
   return (

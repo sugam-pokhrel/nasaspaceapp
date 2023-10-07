@@ -1,5 +1,5 @@
 import {  getServerSession} from "next-auth";
-import prisma from '../../libs/prismadb'
+import prisma from '../../../../utils/prisma'
 import { NextResponse } from 'next/server';
 
 export async function PUT(request,res) {
@@ -22,7 +22,11 @@ export async function PUT(request,res) {
           email:email
         },
          data:{
-            name:request.body.name,
+            name:data.name,
+            email:email,
+            phone:data.phone,
+            intrest:data.intrest,
+
 
 
            },
@@ -53,6 +57,47 @@ export async function POST(request,res) {
     if (session !== null) {
     const email = session.user.email;
     const data=await request.json();
+    console.log(data)
+
+    let isuser=await prisma.user.findFirst({
+      where:{
+        email:email
+      }
+    })
+
+    if(isuser){
+        
+    try{
+        let update=await prisma.user.update({
+          where:{
+            email:email
+          },
+           data:{
+              name:data.name,
+              email:email,
+              phone:data.phone,
+              intrest:data.intrest,
+              country:data.country,
+  
+  
+  
+             },
+        });
+  
+        return NextResponse.json({message:"updated succesfully"},{status:200});
+  
+  
+      }catch(e){
+        return NextResponse.json({ error: 'Something went wrong' }, { status: 401 })
+          
+  
+      }
+    
+        }
+
+
+
+
 
 
 // if (data.name && data.phone && data.ElecricityId && data.ElectricityScNo && data.ElectricityOfficeName && data.transactionID !== '') {
@@ -72,7 +117,6 @@ export async function POST(request,res) {
   
 
 // }
-//     }
 
 
 //     if (Object.keys(data.address).every(function(x) { return data.address[x]===''||data.address[x]===null;}) === false) {
@@ -90,13 +134,9 @@ export async function POST(request,res) {
            data:{
             email,
             name:data.name,
-            phone:data.phone,
-            ElecricityId:data.ElecricityId,
-            ElectricityScNo:data.ElectricityScNo,
-            ElectricityOfficeName:data.ElectricityOfficeName,
-            transactionId:data.transactionID,
-
-
+            phone:data.number,
+            intrest:data.categories,
+            country:data.country,
 
            },
 
@@ -121,5 +161,28 @@ export async function POST(request,res) {
 
 
   }
-}
   
+
+
+
+    
+
+
+   
+    // try{
+
+    //     // const body=await request.json();
+    //     // const {username,password,email}=body;
+
+    //    const user= await prisma.user.findUnique({
+           
+    //    });
+
+    //     return Response.json({message:"success"})
+
+    // }catch(e){
+    //     return NextResponse.error();
+    // }
+
+}
+

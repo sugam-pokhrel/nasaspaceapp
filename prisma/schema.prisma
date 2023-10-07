@@ -21,6 +21,8 @@ model User{
   email     String   @unique
   phone     String   @unique
   intrest   String[]
+  country String
+  
 
 
 
