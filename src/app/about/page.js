@@ -1,4 +1,5 @@
-"use client"
+'use client'
+
 import Navbar from '../daisycompo/Navbar/Navbar';
 import React from 'react';
 
@@ -24,7 +25,7 @@ const Page = () => {
             safeguarding user data. It will have additional features like paid
             projects and a marketplace for buying and selling materials.
           </p>
-          <img src='./sciMart.png' width='auto' />
+          <img src='./sciMart.png' width='auto' alt='image'/>
         </div>
         <div className='aboutSectionRight'>
           <h2 className='text-3xl'>
