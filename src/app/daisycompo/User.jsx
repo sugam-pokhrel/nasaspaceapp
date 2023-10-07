@@ -35,6 +35,18 @@ function ModalForm({ isOpen, onClose }) {
     // Reset the form or close the modal after submission
     onClose();
   };
+  
+  const userInterests = [
+    'Artificial Intelligence',
+    'Web development',
+    'Mobile development',
+    'Data Science',
+    'Science',
+    'Techonologies',
+    'Mathematics',
+
+  ];
+
 
   return (
     <div
@@ -47,10 +59,10 @@ function ModalForm({ isOpen, onClose }) {
       <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
         <div className="modal-content py-4 text-left px-6">
           <div className="flex justify-between items-center pb-3">
-            <p className="text-2xl font-bold">Sign Up</p>
+            <p className="text-2xl font-bold text-black mt-4 underline text-cen">Sign Up</p>
             <button
               onClick={onClose}
-              className="modal-close px-3 py-1 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
+              className="modal-close px-3 py-1 rounded-fulltransition-all focus:outline-none focus:bg-gray-300"
             >
               &#215;
             </button>
@@ -58,14 +70,14 @@ function ModalForm({ isOpen, onClose }) {
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-600">
+              <label htmlFor="name" className="block text-black">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className="form-input"
+                className="form-input w-full p-2 border border-gray-300 rounded placeholder-gray-500 mt-0"
                 placeholder="John Doe"
                 onChange={handleInputChange}
                 value={formData.name}
@@ -73,14 +85,14 @@ function ModalForm({ isOpen, onClose }) {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="country" className="block text-gray-600">
+              <label htmlFor="country" className="block text-black">
                 Country
               </label>
               <input
                 type="text"
                 id="country"
                 name="country"
-                className="form-input"
+                className="form-input w-full p-2 border border-gray-300 rounded placeholder-gray-500  mt-0"
                 placeholder="Your Country"
                 onChange={handleInputChange}
                 value={formData.country}
@@ -88,14 +100,14 @@ function ModalForm({ isOpen, onClose }) {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="number" className="block text-gray-600">
-                Number
+              <label htmlFor="number" className="block text-black">
+              Phone Number
               </label>
               <input
                 type="text"
                 id="number"
                 name="number"
-                className="form-input"
+                className="form-input w-full p-2 border border-gray-300 rounded placeholder-black  mt-0"
                 placeholder="Phone Number"
                 onChange={handleInputChange}
                 value={formData.number}
@@ -103,78 +115,24 @@ function ModalForm({ isOpen, onClose }) {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-600">Categories</label>
+              <label className="block text-black">Interest</label>
               <div className="mt-2 space-y-2">
-                <label className="inline-flex items-center" key="coding">
-                  <input
-                    type="checkbox"
-                    name="coding"
-                    checked={formData.categories.includes("coding")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-blue-600"
-                  />
-                  <span className="text-blue-800">Coding</span>
-                </label>
-                <label className="inline-flex items-center" key="science">
-                  <input
-                    type="checkbox"
-                    name="science"
-                    checked={formData.categories.includes("science")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-green-600"
-                  />
-                  <span className="text-green-800">Science</span>
-                </label>
-                <label className="inline-flex items-center" key="environment">
-                  <input
-                    type="checkbox"
-                    name="environment"
-                    checked={formData.categories.includes("environment")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-yellow-600"
-                  />
-                  <span className="text-yellow-800">Environment</span>
-                </label>
-                <label className="inline-flex items-center" key="space">
-                  <input
-                    type="checkbox"
-                    name="space"
-                    checked={formData.categories.includes("space")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-indigo-600"
-                  />
-                  <span className="text-indigo-800">Space</span>
-                </label>
-                <label className="inline-flex items-center" key="moon">
-                  <input
-                    type="checkbox"
-                    name="moon"
-                    checked={formData.categories.includes("moon")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-purple-600"
-                  />
-                  <span className="text-purple-800">Moon</span>
-                </label>
-                <label className="inline-flex items-center" key="planets">
-                  <input
-                    type="checkbox"
-                    name="planets"
-                    checked={formData.categories.includes("planets")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-red-600"
-                  />
-                  <span className="text-red-800">Planets</span>
-                </label>
-                <label className="inline-flex items-center" key="programming">
-                  <input
-                    type="checkbox"
-                    name="programming"
-                    checked={formData.categories.includes("programming")}
-                    onChange={handleCategoryChange}
-                    className="mr-2 text-pink-600"
-                  />
-                  <span className="text-pink-800">Programming</span>
-                </label>
+              {userInterests.map((interest) => (
+                  <label
+                    key={interest}
+                    className="inline-flex items-center"
+                  >
+                      <input
+                      type="checkbox"
+                      name={interest}
+                      checked={formData.categories.includes(interest)}
+                      onChange={handleCategoryChange}
+                      className="mr-2 text-black"
+                    />
+                    <span className="text-green-800 ">{interest}</span>
+                  </label>
+                ))}
+                {/* ... Category checkboxes here ... */}
               </div>
             </div>
             <div className="flex justify-end pt-2">
@@ -193,4 +151,3 @@ function ModalForm({ isOpen, onClose }) {
 }
 
 export default ModalForm;
-
