@@ -6,6 +6,9 @@ import prisma from '../../../../utils/prisma'
 
 export async function POST(req,res) {
     var session= await getServerSession();
+    if(!session){
+        return NextResponse.json({msg:"sorry"})
+    }
     const {name,phone,intrest}=req.body;
 
     
