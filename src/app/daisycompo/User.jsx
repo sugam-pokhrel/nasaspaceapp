@@ -91,7 +91,7 @@ function ModalForm({ isOpen, onClose }) {
                 type="text"
                 id="country"
                 name="country"
-                className="form-input w-full p-2 border border-gray-300 rounded placeholder-gray-500  mt-0"
+                className="form-input w-full p-2 border-gray-300 rounded placeholder-gray-500  mt-0"
                 placeholder="Your Country"
                 onChange={handleInputChange}
                 value={formData.country}
@@ -106,7 +106,7 @@ function ModalForm({ isOpen, onClose }) {
                 type="text"
                 id="number"
                 name="number"
-                className="form-input w-full p-2 border border-gray-300 rounded placeholder-black  mt-0"
+                className="form-input w-full p-2 border-gray-300 rounded placeholder-gray-500  mt-0"
                 placeholder="Phone Number"
                 onChange={handleInputChange}
                 value={formData.number}

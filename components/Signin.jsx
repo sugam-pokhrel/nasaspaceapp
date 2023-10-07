@@ -15,8 +15,8 @@ const SigninButton = () => {
     );
   }
   return (
-    <button onClick={() => signIn()} >
-    Get started now 
+    <button onClick={() => signIn()} className="mainBtn">
+    Get started 
     </button>
   );
 };

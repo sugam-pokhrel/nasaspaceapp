@@ -24,9 +24,16 @@ const Page = () => {
             safeguarding user data. It will have additional features like paid
             projects and a marketplace for buying and selling materials.
           </p>
+      <div className='aboutSectionRight'>
           <img src='./sciMart.png' width='auto' />
+          </div>
         </div>
-        <div className='aboutSectionRight'>
+      <div className='aboutSection2'>
+      
+        <div className='aboutSectionLeft2'>
+    <img src='https://i.pinimg.com/736x/6c/a2/77/6ca277362ea9818d785e045de853402c.jpg' ></img>
+          </div>
+          <div className='aboutSectionRight2 mt-5'>
           <h2 className='text-3xl'>
             Why <b>SciMarket</b>?
           </h2>
@@ -53,6 +60,7 @@ const Page = () => {
             additional features such as paid projects and a marketplace for
             buying and selling materials, enhancing its utility for scientists.
           </p>
+        </div>
         </div>
       </div>
     </>
