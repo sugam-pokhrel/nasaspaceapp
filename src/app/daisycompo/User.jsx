@@ -31,8 +31,7 @@ function ModalForm({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to the server)
-    // Reset the form or close the modal after submission
+ console.log(formData)
     onClose();
   };
   
@@ -77,7 +76,7 @@ function ModalForm({ isOpen, onClose }) {
                 type="text"
                 id="name"
                 name="name"
-                className="form-input w-full p-2 border border-gray-300 rounded placeholder-gray-500 mt-0"
+                className="form-input w-full p-2  rounded  mt-0"
                 placeholder="John Doe"
                 onChange={handleInputChange}
                 value={formData.name}
@@ -138,7 +137,7 @@ function ModalForm({ isOpen, onClose }) {
             <div className="flex justify-end pt-2">
               <button
                 type="submit"
-                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded"
+                className="px-4 py-2 updateBtn text-white font-semibold rounded"
               >
                 Update Profile
               </button>
