@@ -1,7 +1,8 @@
 "use client";
 import React from 'react'
 import Link from 'next/link'
-
+import SigninButton from '../../components/Signin';
+import { signIn, signOut, useSession } from "next-auth/react";
 export default function Home() {
   return (
     <>
@@ -11,9 +12,11 @@ export default function Home() {
         <p className='infoPara '>
         We created you a platform where you can share you ideas and share your sci-fi projects and teach you how to cooperate.
         </p>
-        <btton className="mainBtn" onClick={()=>{
+        <SigninButton/>
+        {/* <btton className="mainBtn" onClick={()=>{
           console.log("hi")
-        }}>Get Started</btton>
+          signIn()
+        }}>Get Started</btton> */}
         <Link href="/About">
         <span className='underline'>How it works?</span></Link>
       </div>

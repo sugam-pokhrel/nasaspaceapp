@@ -1,5 +1,6 @@
 import './globals.css'
 import { Open_Sans  } from 'next/font/google'
+import Providers from '../../components/Providers'
 // import Navbar from '../../components/Navbar'
 // import Footer from '@/components/Footer/footer'
 const open_Sans = Open_Sans({ 
@@ -14,6 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
+      <Providers>
       <body className={open_Sans.className}>
       
         {/* <Navbar/> */}
@@ -21,6 +24,8 @@ export default function RootLayout({ children }) {
         {/* <Footer/> */}
         
         </body>
+
+        </Providers>
     </html>
   )  
 }  
