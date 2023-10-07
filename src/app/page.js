@@ -1,8 +1,8 @@
 "use client";
 import React from 'react'
 import Link from 'next/link'
+import { Link } from "react-scroll";
 import SigninButton from '../../components/Signin';
-import { signIn, signOut, useSession } from "next-auth/react";
 export default function Home() {
   return (
     <>
