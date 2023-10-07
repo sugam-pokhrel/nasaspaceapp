@@ -1,3 +1,4 @@
+// To find todays date in yyyy-mm-dd format
 const today = new Date();
 
 const day = String(today.getDate()).padStart(2, '0');
@@ -6,10 +7,16 @@ const year = today.getFullYear();
 
 const formattedDate = `${year}-${month}-${day}`;
 
+
 document.querySelector("img").style.display = "block";
+
+// adding nasa api key and api url
+
 let apiKey = "4oH3GPy5HI6hdnCOPcdOLMOKmgwBVTJrwdvrvteK";
 let apiURL = "https://api.nasa.gov/planetary/apod";
 let date = formattedDate;
+
+// api sytax
 
 fetch(`${apiURL}?api_key=${apiKey}&date=${date}`)
  .then((res) => res.json())
