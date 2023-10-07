@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100">
         <div className="flex-1">
           <Link href="/">
             <img src="./sciMart.png" width="100px" />
@@ -47,7 +47,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
