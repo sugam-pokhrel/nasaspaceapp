@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 from flask import Flask, render_template, request
 
-# Sample interest data
+# dummy intrest data
 interest_data = pd.DataFrame({
     'projects': ['project0', 'project1', 'project2', 'project3', 'project4', 'project5', 'project6'],
     'Interests': ['space', 'Environment', 'Society', 'Web', 'mobile', 'Android', 'Programming']
@@ -69,9 +69,9 @@ def index():
             if suggested_interest in interests:
                 suggested_projects.append(project)
 
-        return render_template('index1.html', interest_data=interest_data, suggested_projects=suggested_projects)
+        return render_template('index.html', interest_data=interest_data, suggested_projects=suggested_projects)
 
-    return render_template('index1.html', interest_data=interest_data)
+    return render_template('index.html', interest_data=interest_data)
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5000)
+    app.run(debug=False, port=49)
