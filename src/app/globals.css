@@ -271,3 +271,36 @@ input{
   border-bottom: 3px solid black;
   background-color: none
 }
+.block{
+  color: black;
+  font-size: 20px;
+}
+.fileUploadForm{
+  background-color: white;
+  margin: auto 0;
+  width: 30%;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  height:480px;
+}
+.fileUploadForm input{
+  width: 100%;
+  color: black;
+  margin-top: 20px;
+  background-color: transparent;
+  border-bottom: 3px solid black;
+  height: 40px;
+}
+textarea{
+  color: black;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+}
+.fileBtn{
+  float: right;
+  background-color: #917FB3;
+  font-weight: lighter;
+  border-radius: 30px;
+}
