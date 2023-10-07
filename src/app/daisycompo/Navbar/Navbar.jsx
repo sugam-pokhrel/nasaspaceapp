@@ -12,8 +12,10 @@ const page = () => {
   <div className="navbar bg-base-100">
   <div className="flex-1">
    <Link href={"/"}><img src="./sciMart.png" width={"100px"}></img></Link>
-   <Link href={"/about"}>About</Link>
-<Link href={"/features"}>Features</Link>
+   <ul tabIndex={0} className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex-row">
+        <Link href={"./about"}><li><a>About</a></li></Link>
+        <Link href={"./features"}><li><a>Features</a></li></Link>
+      </ul>
 
   </div>
   
