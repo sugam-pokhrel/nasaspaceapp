@@ -1,13 +1,13 @@
 "use client"
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import Link from 'next/link'
 import React from 'react'
 const page = () => {
   return (
   <>
   <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+   <Link href={"/"}><img src="./sciMart.png" width={"100px"}></img></Link>
   </div>
   <div className="flex-none">
     <div className="dropdown dropdown-end">

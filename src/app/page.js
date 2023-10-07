@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import SigninButton from '../../components/Signin';
 import { useSession } from 'next-auth/react';
-import App from '../../components/App';
 export default function Home() {
 
   const { data: session } = useSession();
@@ -102,7 +101,7 @@ export default function Home() {
     return (
    <>
 
-   <App />
+   hello world
    
    </>
     )
