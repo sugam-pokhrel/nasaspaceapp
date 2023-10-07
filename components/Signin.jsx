@@ -16,7 +16,7 @@ const SigninButton = () => {
   }
   return (
     <button onClick={() => signIn()} >
-    Get started now
+    Get started now 
     </button>
   );
 };
