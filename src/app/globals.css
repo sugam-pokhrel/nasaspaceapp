@@ -144,9 +144,32 @@ span{
   line-height: 30px
 }
 .interestSection{
-  background-color: #917FB3;
+  background-image: url("https://images.pexels.com/photos/4439901/pexels-photo-4439901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   width: 50%;
   margin: 0 auto; margin-top: 150px;
-  padding: 20px;
+  padding: 40px;
+  font-weight: 500;
+
+  text-align: center;
+}
+
+
+.btnSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.joinBtn{ 
+  text-align: center;
+  background-color: black;
+  padding: 15px;
   border-radius: 30px;
+
+}
+.userDataSection{
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.userDataSection{
+  
 }

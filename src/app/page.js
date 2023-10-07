@@ -82,11 +82,10 @@ In team meetings, users can easily connect via text and voice, fostering collabo
         <h2 className='text-2xl'>Ready for your project ?</h2>
         <p>
         Let's get started. 
-
         </p>
       </div>
       <div className='btnSection'>
-        <button className='joinBtn'>Join Now</button>
+        <button className='joinBtn'>Let's begin</button>
       </div>
       </div>
 
