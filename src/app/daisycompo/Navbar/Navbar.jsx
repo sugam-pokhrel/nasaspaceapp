@@ -12,9 +12,9 @@ const page = () => {
   <div className="navbar bg-base-100">
   <div className="flex-1">
    <Link href={"/"}><img src="./sciMart.png" width={"100px"}></img></Link>
-   <ul tabIndex={0} className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex-row">
-        <Link href={"./about"}><li><a>About</a></li></Link>
-        <Link href={"./features"}><li><a>Features</a></li></Link>
+   <ul tabIndex={0} className="menu menu-md dropdown-content mt-3 z-[1] p-5 flex-space-between w-100 flex-row">
+        <Link href={"./about"} className="mr-4">About</Link>
+        <Link href={"./features"} className="mr-4">Features</Link>
       </ul>
 
   </div>
