@@ -1,7 +1,14 @@
+"use client"
+import Navbar from '../daisycompo/Navbar/Navbar'
 import React from 'react'
-
-export const page = () => {
+const page = () => {
   return (
-    <div>page</div>
-  )
+  <>
+
+  <Navbar/>
+  </>
+  
+    )
 }
+
+export default page
