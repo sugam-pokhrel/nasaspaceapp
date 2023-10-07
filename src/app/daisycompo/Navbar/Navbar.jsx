@@ -1,12 +1,10 @@
 "use client"
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import Link from 'next/link'
 import React from 'react'
 const page = () => {
 
-  const { data: session } = useSession();
-
-  console.log(session)
+ 
   return (
   <>
   <div className="navbar bg-base-100">
