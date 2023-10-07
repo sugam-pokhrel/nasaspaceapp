@@ -3,6 +3,10 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from 'next/link'
 import React from 'react'
 const page = () => {
+
+  const { data: session } = useSession();
+
+  console.log(session)
   return (
   <>
   <div className="navbar bg-base-100">
@@ -27,7 +31,7 @@ const page = () => {
           </a>
         </li>
         <li><button>Settings</button></li>
-        <li ><button>Logout</button></li>
+        <li ><button onClick={signOut}>Logout</button></li>
       </ul>
     </div>
   </div>

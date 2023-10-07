@@ -100,10 +100,9 @@ export default function Home() {
   else{
     return (
    <>
-
-   hello world
-   
+hi
    </>
+
     )
   }
   
