@@ -3,8 +3,9 @@
 <hr>
 **Features**
 <hr>
--<h5>**Project Formation**: The user can create the project and can make it public if it wanted collaborators or the contributors. 
--**Collaboration**: The user can collborate on the project they want or they have interest on.
--**Group chats and Private Messaging**: Team members can communicate via group chats or private messages, facilitating effective communication and idea sharing.
--**Project Monetization**:This platform empowers users to create and market their projects, offering a platform where they can connect with potential buyers and successfully sell their innovative ventures.
+-<h5>Project Formation: The user can create the project and can make it public if it wanted collaborators or the contributors. </h5>
+<br>
+-<h5>Collaboration: The user can collborate on the project they want or they have interest on.</h5>
+-<h5>Group chats and Private Messaging: Team members can communicate via group chats or private messages, facilitating effective communication and idea sharing.</h5>
+-<h5>Project Monetization**:This platform empowers users to create and market their projects, offering a platform where they can connect with potential buyers and successfully sell their innovative ventures.
 
