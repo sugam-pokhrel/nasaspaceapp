@@ -1,4 +1,5 @@
 "use client"
+import { signIn, signOut, useSession } from "next-auth/react";
 
 import React from 'react'
 const page = () => {
@@ -26,7 +27,7 @@ const page = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li onClick={signOut()}><a>Logout</a></li>
       </ul>
     </div>
   </div>
