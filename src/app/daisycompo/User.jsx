@@ -1,103 +1,139 @@
+"use client"
 
-import React from 'react'
 import React, { useState } from 'react';
-import { Input, Tag, Select } from 'daisyui/react';
 
-const User = () => {
-    const [tags, setTags] = useState([]);
-    const [formData, setFormData] = useState({
-      name: '',
-      country: '',
-      number: '',
-    });
-  
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-    };
-  
-    const handleTagSelect = (selectedTags) => {
-      setTags(selectedTags);
-    };
-  
-    return (
-      <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Sign up</h2>
-        <form>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-600">
-              Name
-            </label>
-            <Input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="John Doe"
-              onChange={handleInputChange}
-              value={formData.name}
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="country" className="block text-gray-600">
-              Country
-            </label>
-            <Input
-              type="text"
-              id="country"
-              name="country"
-              placeholder="Your Country"
-              onChange={handleInputChange}
-              value={formData.country}
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="number" className="block text-gray-600">
-              Number
-            </label>
-            <Input
-              type="text"
-              id="number"
-              name="number"
-              placeholder="Phone Number"
-              onChange={handleInputChange}
-              value={formData.number}
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="categories" className="block text-gray-600">
-              Categories
-            </label>
-            <Select
-              id="categories"
-              name="categories"
-              multiple
-              onChange={handleTagSelect}
-              placeholder="Select Categories"
-              className="mt-2"
-            >
-              <Tag value="coding">Coding</Tag>
-              <Tag value="science">Science</Tag>
-              <Tag value="trees">Trees</Tag>
-              <Tag value="environment">Environment</Tag>
-              <Tag value="js">JavaScript</Tag>
-              <Tag value="nodejs">Node.js</Tag>
-              <Tag value="typescript">TypeScript</Tag>
-            </Select>
-          </div>
-          <div className="flex items-center justify-between">
+function ModalForm({ isOpen, onClose }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    country: '',
+    number: '',
+    categories: [],
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleCategoryChange = (e) => {
+    const options = e.target.options;
+    const selectedCategories = [];
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].selected) {
+        selectedCategories.push(options[i].value);
+      }
+    }
+    setFormData({ ...formData, categories: selectedCategories });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here (e.g., send data to the server)
+    // Reset the form or close the modal after submission
+    onClose();
+  };
+
+  return (
+    <div
+      className={`fixed inset-0 flex items-center justify-center z-50 ${
+        isOpen ? '' : 'hidden'
+      }`}
+    >
+      <div className="modal-overlay absolute inset-0 bg-black opacity-50"></div>
+
+      <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <div className="modal-content py-4 text-left px-6">
+          <div className="flex justify-between items-center pb-3">
+            <p className="text-2xl font-bold">Sign Up</p>
             <button
-              type="submit"
-              className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              onClick={onClose}
+              className="modal-close px-3 py-1 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none focus:bg-gray-300"
             >
-              Sign Up
+              &#215;
             </button>
-            <a href="#" className="text-gray-600 hover:underline">
-              Already have an account?
-            </a>
           </div>
-        </form>
+
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-600">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="form-input"
+                placeholder="John Doe"
+                onChange={handleInputChange}
+                value={formData.name}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="country" className="block text-gray-600">
+                Country
+              </label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                className="form-input"
+                placeholder="Your Country"
+                onChange={handleInputChange}
+                value={formData.country}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="number" className="block text-gray-600">
+                Number
+              </label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                className="form-input"
+                placeholder="Phone Number"
+                onChange={handleInputChange}
+                value={formData.number}
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="categories" className="block text-gray-600">
+                Categories
+              </label>
+              <select
+                id="categories"
+                name="categories"
+                className="form-select"
+                multiple
+                onChange={handleCategoryChange}
+                value={formData.categories}
+                required
+              >
+                <option value="coding">Coding</option>
+                <option value="science">Science</option>
+                <option value="trees">Trees</option>
+                <option value="environment">Environment</option>
+                <option value="js">JavaScript</option>
+                <option value="nodejs">Node.js</option>
+                <option value="typescript">TypeScript</option>
+              </select>
+            </div>
+            <div className="flex justify-end pt-2">
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded"
+              >
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    );
+    </div>
+  );
 }
 
-export default User
+export default ModalForm;
