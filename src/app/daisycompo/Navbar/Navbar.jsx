@@ -26,8 +26,8 @@ const page = () => {
             <span className="badge">New</span>
           </a>
         </li>
-        <li><a>Settings</a></li>
-        <li ><a>Logout</a></li>
+        <li><button>Settings</button></li>
+        <li ><button>Logout</button></li>
       </ul>
     </div>
   </div>
