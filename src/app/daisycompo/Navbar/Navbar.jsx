@@ -12,7 +12,11 @@ const page = () => {
   <div className="navbar bg-base-100">
   <div className="flex-1">
    <Link href={"/"}><img src="./sciMart.png" width={"100px"}></img></Link>
+   <Link href={"/about"}>About</Link>
+<Link href={"/features"}>Features</Link>
+
   </div>
+  
   <div className="flex-none">
     <div className="dropdown dropdown-end">
      

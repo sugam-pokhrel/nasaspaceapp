@@ -110,15 +110,30 @@ span{
     padding: 30px;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
   }
-  .aboutS
+  .aboutSection::after{
+    content: "";
+    display: block;
+    background-color: #917FB3;
+    width: 200px;
+    margin: auto;
+    height: 10px;
+  }
   .aboutSection p{
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
     padding: 0px 90px;
     line-height: 30px;
   }
+  .aboutSection2 p{
+    font-size: 17px;
+    font-weight: 300;
+    padding: 0px 90px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+  
   .aboutSection2{
     padding: 30px;
     justify-content: center;
