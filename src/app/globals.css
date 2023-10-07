@@ -310,3 +310,8 @@ textarea{
   background-color: black;
   color: #E5BEEC;
 }
+
+.joinBtn{
+  float:right;
+  width:100%;
+}

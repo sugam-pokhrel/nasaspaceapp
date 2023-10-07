@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link'
 import React,{useState,useEffect} from 'react'
 
 
@@ -46,10 +46,11 @@ function Marketplace() {
   return (
     <>
     
-    <div className="container mx-auto p-4">
+    <div  className="container mx-auto p-4">
       <h1 className="text-3xl  text-cente mb-4">Welcome to the SciMarket</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products.map((product) => (
+          <Link href={'/projects/'+product.id}>
           <div key={product.id} className="bg-white p-4 rounded shadow">
             <img src={product.imgUrl}></img>
             <h2 className="text-xl text-black mt-5 mb-2">{product.title}</h2>
@@ -59,9 +60,11 @@ function Marketplace() {
                
             </button>
           </div>
+          </Link>
         ))}
       </div>
     </div>
+    
     </>
   );
 }

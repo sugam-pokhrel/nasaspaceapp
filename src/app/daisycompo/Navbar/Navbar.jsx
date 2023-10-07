@@ -2,7 +2,16 @@
 import Link from 'next/link';
 import React from 'react';
 import { signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+
+
 const Navbar = () => {
+  const { data: session } = useSession();
+
+
+
+
+
   // Replace with your session logic
  // Replace with your sign out logic
 
@@ -31,7 +40,7 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="w-10 rounded-full">
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" alt='user' />
+                <img src={session?.user?.image||'SignIn'} alt='user' />
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
