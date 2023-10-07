@@ -14,7 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='bg-black
+    '>
 
       <Providers>
       <body className={open_Sans.className}>

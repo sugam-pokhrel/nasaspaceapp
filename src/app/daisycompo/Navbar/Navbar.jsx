@@ -8,12 +8,12 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-black">
         <div className="flex-1">
           <Link href="/">
             <img src="./sciMart.png" width="100px" />
           </Link>
-          <ul tabIndex={0} className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex-row">
+          <ul tabIndex={0} className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52 flex-row">
             <li>
               <Link href="/about">
                About
