@@ -34,10 +34,9 @@ function FileUploadForm() {
   return (
 <>
     <Navbar/>
-  
- 
-      <h2 className='text-3xl text-white ' >Upload your files</h2>
-      <div className='fileUploadForm'> 
+      <h2 className='text-3xl mt-3 text-white ' >Upload your files</h2>
+      <p className='mt-5'>You can upload your files here with the custom title and some description about it.</p>
+      <div className='fileUploadForm '>
       <form onSubmit={handleSubmit} className="text-white mt-5 ">
         <div className="mb-5">
           <label htmlFor="title" className="block mb-0">
@@ -89,6 +88,9 @@ function FileUploadForm() {
           Submit
         </button>
       </form>
+   
+      <div>
+      </div>
     </div>
     </> 
   );

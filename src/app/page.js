@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link'
 import SigninButton from '../../components/Signin';
 import { useSession } from 'next-auth/react';
-import Navbar from '../app/daisycompo/Navbar/Navbar'
+import Navbar from './daisycompo/Navbar/Navbar'
 
 export default function Home() {
 

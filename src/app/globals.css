@@ -303,4 +303,9 @@ textarea{
   background-color: #917FB3;
   font-weight: lighter;
   border-radius: 30px;
+  transition: 0.5s;
+}
+.fileBtn:hover{
+  background-color: black;
+  color: #E5BEEC;
 }
