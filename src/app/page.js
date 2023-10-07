@@ -5,7 +5,11 @@ export default function Home() {
     <>
     <div className='mainSection grid grid-cols-2 '>
       <div className='mainContent'>
-        <h1 className='text-3xl text-center'><b >Explore</b>  the <b>SciMarket</b> for Open Science Project</h1>
+        <h1 className=''><b >Explore</b>  the <b>SciMarket</b> for Open Science Project</h1>
+        <p className='infoPara '>
+        We created you a platform where you can share you ideas and share your sci-fi projects and teach you how to cooperate.
+        </p>
+       </div>
       </div>
       <div className='mainImg'>
        <div className='ImgBox1 '>
