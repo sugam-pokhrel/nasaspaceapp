@@ -1,6 +1,7 @@
 
 
 import { NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth';
 import prisma from '../../../../utils/prisma'
 
 export async function POST(req,res) {
@@ -11,6 +12,7 @@ export async function POST(req,res) {
     await prisma.user.create({
 
         data: {
+            email: req.body.email,
             name: name,
             phone: phone,
             intrest: intrest
