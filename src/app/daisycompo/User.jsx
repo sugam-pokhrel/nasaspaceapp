@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-
+"use client"
+import React, { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
 function ModalForm({ isOpen, onClose }) {
+  const { data: session } = useSession();
   const [formData, setFormData] = useState({
     name: '',
     country: '',
@@ -29,8 +31,26 @@ function ModalForm({ isOpen, onClose }) {
     setFormData({ ...formData, categories: updatedCategories });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
+    console.log(formData)
     e.preventDefault();
+    if(!session){
+      alert('cannot perform not authenticated')
+      return;
+    }
+    
+  try{
+    await fetch('/api/user', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+  }catch(err){
+    alert("Err")
+  }
+
+    
  console.log(formData)
     onClose();
   };
@@ -45,6 +65,18 @@ function ModalForm({ isOpen, onClose }) {
     'Mathematics',
 
   ];
+useEffect(()=>{
+  fetchfirst()
+},[])
+  let fetchfirst=async()=>{
+  let data=await fetch('/api/user', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  })
+
+  data=await data.json()
+  console.log(data)
+  }
 
 
   return (
