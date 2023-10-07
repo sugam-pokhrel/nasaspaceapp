@@ -22,11 +22,21 @@ model User{
   phone     String   @unique
   intrest   String[]
   country String
+
+
+
+
+
   
-
-
-
-
   
-  
+}
+
+model Projects{
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdBy String 
+  title String
+  description String
+  imgUrl String
+  createdAt DateTime @default(now())
+
 }

@@ -1,7 +1,21 @@
 "use client";
+import {ID, Role,Permission} from 'appwrite'
 import React, { useState } from 'react';
+import { redirect } from 'next/navigation'
 import Navbar from "../daisycompo/Navbar/Navbar"
+
+import { useSession } from 'next-auth/react';
+import storage from '../../../utils/appwrite'
 function FileUploadForm() {
+  let {data:session}=useSession();
+  console.log(session)
+
+  if(!session){
+    console.log('not authenticated')
+  }
+//   if(!session){
+//     redirect('api/auth/signin');
+// }
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
@@ -21,6 +35,8 @@ function FileUploadForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //6521c107e5f3d4430b51
+    
 
     // Here, you can handle the form submission, including uploading the file
     // to your server if needed. You can use libraries like Axios to send
@@ -29,7 +45,51 @@ function FileUploadForm() {
     console.log('Title:', title);
     console.log('Description:', description);
     console.log('Selected File:', selectedFile);
+
+    if(title=='' || description=='' || selectedFile==null){
+      alert("Please fill all the fields")
+      return;
+    }
+    const promise = storage.createFile(
+      '6521c107e5f3d4430b51',
+      ID.unique(),
+      selectedFile,
+    
+  );
+  
+  promise.then(async function (response) {
+      console.log(response); // Successany
+
+      const result = await storage.getFilePreview(response.bucketId, response.$id);
+      console.log(result.href)
+
+      let data=await fetch('/api/upload',{
+        method:'POST',
+        body:JSON.stringify({
+          title:title,
+          description:description,
+          link:result.href
+          
+        }),
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+      
+
+
+      
+     // Failure
+  });
+
+
   };
+  if(!session){
+   return <>
+    Please login to upload files
+   </>
+
+  }
 
   return (
 <>
