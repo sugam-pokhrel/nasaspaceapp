@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import prisma from '../../../../utils/prisma'
 
 export async function POST(req,res) {
+    var session= await getServerSession();
     const {name,phone,intrest}=req.body;
 
     
@@ -12,7 +13,7 @@ export async function POST(req,res) {
     await prisma.user.create({
 
         data: {
-            email: req.body.email,
+            email: session.user.email,
             name: name,
             phone: phone,
             intrest: intrest
