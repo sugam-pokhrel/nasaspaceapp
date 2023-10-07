@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import Navbar from '../daisycompo/Navbar'
+import Navbar from '../daisycompo/Footer/footer'
 
 const page = () => {
   return (
