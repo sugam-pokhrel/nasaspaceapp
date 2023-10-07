@@ -110,7 +110,14 @@ span{
     padding: 30px;
     justify-content: center;
     text-align: center;
-    margin-top: 20px
+    margin-top: 20px;
+  }
+  .aboutS
+  .aboutSection p{
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0px 90px;
+    line-height: 30px;
   }
   .aboutSection2{
     padding: 30px;
@@ -132,6 +139,9 @@ span{
   }
   .aboutSectionRight{
     margin: auto ;
+  }
+  .aboutSectionLeft2 img{
+    border-radius: 20px;
   }
 .detailSection .title{ 
   font-size: 35px;
