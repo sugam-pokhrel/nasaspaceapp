@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React,{useState,useEffect} from 'react'
 
-
+import Navbar from '../daisycompo/Navbar/Navbar';
 // Sample data for products
 
 
@@ -45,7 +45,7 @@ function Marketplace() {
   
   return (
     <>
-    
+    <Navbar/>
     <div  className="container mx-auto p-4">
       <h1 className="text-3xl  text-cente mb-4">Welcome to the SciMarket</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

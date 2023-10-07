@@ -2,24 +2,18 @@
 
 
 import React,{useState,useEffect} from 'react'
-
+import Navbar from '../../daisycompo/Navbar/Navbar';
 const page = ({params}) => {
 
   
   return (
-    <div>
-      
-      
-      page {params.id}
+    <>
+    <Navbar/>
+    <div className='ProjectDetailSection'>
 
 
-
-
-    
-    
-    
     </div>
-
+</>
 
   )
 }
