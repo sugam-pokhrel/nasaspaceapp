@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState } from 'react';
 
 function ModalForm({ isOpen, onClose }) {
@@ -16,14 +14,19 @@ function ModalForm({ isOpen, onClose }) {
   };
 
   const handleCategoryChange = (e) => {
-    const options = e.target.options;
-    const selectedCategories = [];
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].selected) {
-        selectedCategories.push(options[i].value);
+    const { name, checked } = e.target;
+    const updatedCategories = [...formData.categories];
+
+    if (checked) {
+      updatedCategories.push(name);
+    } else {
+      const index = updatedCategories.indexOf(name);
+      if (index !== -1) {
+        updatedCategories.splice(index, 1);
       }
     }
-    setFormData({ ...formData, categories: selectedCategories });
+
+    setFormData({ ...formData, categories: updatedCategories });
   };
 
   const handleSubmit = (e) => {
@@ -100,33 +103,86 @@ function ModalForm({ isOpen, onClose }) {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="categories" className="block text-gray-600">
-                Categories
-              </label>
-              <select
-                id="categories"
-                name="categories"
-                className="form-select"
-                multiple
-                onChange={handleCategoryChange}
-                value={formData.categories}
-                required
-              >
-                <option value="coding">Coding</option>
-                <option value="science">Science</option>
-                <option value="trees">Trees</option>
-                <option value="environment">Environment</option>
-                <option value="js">JavaScript</option>
-                <option value="nodejs">Node.js</option>
-                <option value="typescript">TypeScript</option>
-              </select>
+              <label className="block text-gray-600">Categories</label>
+              <div className="mt-2 space-y-2">
+                <label className="inline-flex items-center" key="coding">
+                  <input
+                    type="checkbox"
+                    name="coding"
+                    checked={formData.categories.includes("coding")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-blue-600"
+                  />
+                  <span className="text-blue-800">Coding</span>
+                </label>
+                <label className="inline-flex items-center" key="science">
+                  <input
+                    type="checkbox"
+                    name="science"
+                    checked={formData.categories.includes("science")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-green-600"
+                  />
+                  <span className="text-green-800">Science</span>
+                </label>
+                <label className="inline-flex items-center" key="environment">
+                  <input
+                    type="checkbox"
+                    name="environment"
+                    checked={formData.categories.includes("environment")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-yellow-600"
+                  />
+                  <span className="text-yellow-800">Environment</span>
+                </label>
+                <label className="inline-flex items-center" key="space">
+                  <input
+                    type="checkbox"
+                    name="space"
+                    checked={formData.categories.includes("space")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-indigo-600"
+                  />
+                  <span className="text-indigo-800">Space</span>
+                </label>
+                <label className="inline-flex items-center" key="moon">
+                  <input
+                    type="checkbox"
+                    name="moon"
+                    checked={formData.categories.includes("moon")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-purple-600"
+                  />
+                  <span className="text-purple-800">Moon</span>
+                </label>
+                <label className="inline-flex items-center" key="planets">
+                  <input
+                    type="checkbox"
+                    name="planets"
+                    checked={formData.categories.includes("planets")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-red-600"
+                  />
+                  <span className="text-red-800">Planets</span>
+                </label>
+                <label className="inline-flex items-center" key="programming">
+                  <input
+                    type="checkbox"
+                    name="programming"
+                    checked={formData.categories.includes("programming")}
+                    onChange={handleCategoryChange}
+                    className="mr-2 text-pink-600"
+                  />
+                  <span className="text-pink-800">Programming</span>
+                </label>
+              </div>
             </div>
             <div className="flex justify-end pt-2">
               <button
                 type="submit"
                 className="px-4 py-2 bg-blue-500 text-white font-semibold rounded"
               >
-                Sign Up
+                Update Profile
               </button>
             </div>
           </form>
@@ -137,3 +193,4 @@ function ModalForm({ isOpen, onClose }) {
 }
 
 export default ModalForm;
+
