@@ -20,7 +20,7 @@ model User{
   name      String
   email     String   @unique
   phone     String   @unique
-  intrest   String[]
+  intrest   String[] 
 
 
 
