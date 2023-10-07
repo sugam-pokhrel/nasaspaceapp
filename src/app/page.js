@@ -3,12 +3,15 @@ import React from 'react'
 import Link from 'next/link'
 import SigninButton from '../../components/Signin';
 import { useSession } from 'next-auth/react';
+import Navbar from '../app/daisycompo/Navbar/Navbar'
+
 export default function Home() {
 
   const { data: session } = useSession();
   if(!session){
     return (
       <>
+      <Navbar/>
       <div className='mainSection grid grid-cols-2 '>
         <div className='mainContent'>
           <h1 className=''><b >Explore</b>  the <b>SciMarket</b> for Open Science Project</h1>
@@ -91,7 +94,6 @@ export default function Home() {
           <button className='joinBtn'>Let's begin</button>
         </div>
         </div>
-  
       </>
     )
 
