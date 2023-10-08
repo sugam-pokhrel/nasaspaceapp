@@ -58,10 +58,7 @@ const page = ({params}) => {
       <span className='mt-5 text-green-300'>{email}</span>
      <Link href={"/Team"} ><button className='teamBtn bg-green-300 text-black p-3 m-4 rounded-md float-right bol d'>Join Team</button></Link>
       </div>
-      
-      <div className='fileSection'>
-        files
-      </div>
+   
     </div>
 </>
 
