@@ -2,7 +2,6 @@ import { Client ,ID,Storage,Databases} from 'appwrite';
 
 const client = new Client();
 export const id=ID
-const teams = new Teams(client);
 client
     .setEndpoint('https://cloud.appwrite.io/v1')
     .setProject('6521c0ece1373ef247ba');

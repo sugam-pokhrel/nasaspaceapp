@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import React from 'react';
-import { signOut } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 import { useSession } from 'next-auth/react';
 
  
@@ -50,7 +50,7 @@ const Navbar = () => {
             
               <li><button>Settings</button></li>
               
-              <li><button onClick={() => signOut()}>Logout</button></li>
+              <li>{session.user? <button onClick={() => signOut()}>Logout</button>:<button onClick={() => signIn()}>SignIn</button>}</li>
               
               
             </ul>
