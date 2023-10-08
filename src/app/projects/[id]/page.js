@@ -4,6 +4,7 @@
 import React,{useState,useEffect} from 'react'
 import Navbar from '../../daisycompo/Navbar/Navbar';
 const page = ({params}) => {
+  console.log(params)
 
   
   return (

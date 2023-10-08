@@ -69,10 +69,13 @@ function ModalForm({ isOpen, onClose }) {
     'Mathematics',
 
   ];
+
+  
 useEffect(()=>{
   fetchfirst()
 },[])
   let fetchfirst=async()=>{
+
   let data=await fetch('/api/user', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
@@ -86,8 +89,8 @@ useEffect(()=>{
   // intrest:data.categories
 setFormData((prev) => ({
     ...prev,
-    name: data.user.name,
-    number: data.user.phone,
+    name: data?.user?.name,
+    number: data?.user?.phone,
   
   }));
 
