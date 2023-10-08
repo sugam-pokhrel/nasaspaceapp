@@ -1,5 +1,6 @@
 "use client";
 import React from 'react'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import SigninButton from '../../components/Signin';
 import { useSession } from 'next-auth/react';
@@ -99,12 +100,9 @@ export default function Home() {
   }
 
   else{
-    return (
-   <>
+    redirect('/test')
 
-   </>
-
-    )
+    
   }
   
 }
