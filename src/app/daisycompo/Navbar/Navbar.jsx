@@ -50,7 +50,7 @@ const Navbar = () => {
             
               <li><button>Settings</button></li>
               
-              <li>{session.user? <button onClick={() => signOut()}>Logout</button>:<button onClick={() => signIn()}>SignIn</button>}</li>
+              <li>{session?.user? <button onClick={() => signOut()}>Logout</button>:<button onClick={() => signIn()}>SignIn</button>}</li>
               
               
             </ul>
