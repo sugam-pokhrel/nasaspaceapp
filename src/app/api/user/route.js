@@ -14,6 +14,8 @@ export async function GET(request,res) {
       }
       if (session !== null) {
     const email = session.user.email;
+    const data=await request.json();
+
     
     const user= await prisma.user.findFirst({
         where:{

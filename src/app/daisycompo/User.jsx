@@ -160,7 +160,7 @@ console.log(data.user.intrest)
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="number" className="block text-black">
+                                  <label htmlFor="number" className="block text-black">
               Phone Number
               </label>
               <input
