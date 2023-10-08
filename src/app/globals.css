@@ -90,20 +90,54 @@ span{
   font-style: italic;
 }
 
-.ImgBox2{ 
-  float: right;
-  z-index: 0;
-  width: 50%;
+.mainImg{
+  position: relative;
+}
+.img1, .img2, .img3{
   position: absolute;
+  top: 0;
+  left: 0;
+}
+.img1 {
+  z-index: 1;
+  border-radius:30px;
+  transition: 0.5s;
 
 }
-.ImgBox3{
-  position: absolute;
-  z-index: 1;
-  width: 50%;
-  display: flex;
+.img1:hover{
+  cursor: pointer;
+  transform: translateY(-10px);
 }
+
+.img2:hover{
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+.img3:hover{
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+.img2 {
+  z-index: 2;
+  top: 50px;
+  left: 280px;
+   border-radius:30px;
+  margin-top:120px;
+  transition: 0.5s;
+}
+.img3 {
+  z-index: 2;
+  top: 100px;
+  left: 20px;
+  margin-top:200px;
+  border-radius:30px;
+  transition: 0.5s;
+}
+
 .detailSection{ 
+  margin-top: 100px;
   padding: 40px;
   justify-content: center;
   text-align: center;

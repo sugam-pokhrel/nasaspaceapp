@@ -29,18 +29,17 @@ export default function Home() {
         {/* buttons */}
        
         <div className='mainImg'>
-         <div className='ImgBox1 '>
-          <img src='https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' width={"350px"} height={"auto"} className='rounded-2xl'/>
-         </div>
-         <div className='ImgBox2'>
-         <img src='https://images.pexels.com/photos/7925847/pexels-photo-7925847.jpeg?auto=compress&cs=tinysrgb&w=600' width={"350px"} height={"auto"} className='rounded-2xl'/>
-         </div>
-         <div className='ImgBox3'>
-         <img src='https://images.pexels.com/photos/41006/satellite-soyuz-spaceship-space-station-41006.jpeg?auto=compress&cs=tinysrgb&w=600' width={"350px"} height={"auto"} className='rounded-2xl mt-4'/>
-         </div>
+       
+          <img src='https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' width={"350px"} height={"auto"} className='rounded-2xl img1'/>
+        
+    
+         <img src='https://images.pexels.com/photos/7925847/pexels-photo-7925847.jpeg?auto=compress&cs=tinysrgb&w=600' width={"350px"} height={"auto"} className='rounded-2xl img2'/>
+      
+       
+         <img src='https://images.pexels.com/photos/41006/satellite-soyuz-spaceship-space-station-41006.jpeg?auto=compress&cs=tinysrgb&w=600' width={"350px"} height={"auto"} className='rounded-2xl mt-4 img3'/>
         </div>
       </div>
-      <div className='detailSection grid grid-cols-2 mt-5'>
+      <div className='detailSection grid grid-cols-2 '>
         <div className='words p-5' >
           <p>We let you to explore and connect with
    the experts and collaborate in different science projects. </p>
