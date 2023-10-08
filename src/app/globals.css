@@ -311,17 +311,50 @@ textarea{
   background-color: black;
   color: #E5BEEC;
 }
+.ProdetailSection{
+  margin: auto 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .joinBtn{
   float:right;
   width:100%;
 }
 .teamNav{
+  border-bottom-left-radius: 30px;
   width: 40%;
   height: 100%;
   background: #2A2F4F;
   padding: 20px;
 }
-.teamNav img{
+.teamMain{
+  margin-top:100px;
+  width: auto;
+  height: 100%;
+}
+.teamNav img{ 
   margin-bottom: 40px;
+}
+
+.teamNav ul li {
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: 0.5s;
+}
+.teamNav ul li:hover{
+  color: #E5BEEC;
+  transform: translateY(-10px);
+}
+.inviteBtn{
+  padding: 10px;
+  border-radius: 20px;
+  background-color:#E5BEEC;
+  color: black;
+  transition: 0.5s;
+} 
+.inviteBtn:hover{
+  background-color: yellowgreen;
 }
