@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import ModalForm from '../daisycompo/User';
 
+import { redirect } from 'next/navigation'
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

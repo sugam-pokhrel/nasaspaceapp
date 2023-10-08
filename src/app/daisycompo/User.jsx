@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation'
 
 function ModalForm({ isOpen, onClose }) {
   const { data: session } = useSession();
@@ -57,6 +58,8 @@ function ModalForm({ isOpen, onClose }) {
     
  console.log(formData)
     onClose();
+ 
+  redirect('/upload')   
   };
   
   const userInterests = [
